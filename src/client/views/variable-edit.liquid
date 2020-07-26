@@ -1,0 +1,18 @@
+<h3><a href="/">Index</a> > <a href="/variable">Variables</a> > {{ key }}</h3>
+
+<form action="/api/variable/{{ key }}" method="post" target="hiddenFrame"
+    onsubmit="event.preventDefault(); this.submit(); setTimeout(()=> alert('Variable updated'), 0);">
+    <textarea name="value" placeholder="{}" cols="30" rows="10">{{ value | jsonpretty }}</textarea>
+    <br>
+    <button type="submit">Submit</button>
+</form>
+<form onsubmit="
+event.preventDefault(); 
+if (confirm('Are you sure you want to delete this variable?')) {
+    this.submit(); 
+    setTimeout(()=> {alert('Variable deleted'); location.href='/variable'}, 0);
+}" action="/api/variable/{{ key }}?_method=DELETE" method="post" target="hiddenFrame">
+    <button type="submit">Delete</button>
+</form>
+
+<iframe name="hiddenFrame" width="0" height="0" border="0" style="display: none;"></iframe>

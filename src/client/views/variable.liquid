@@ -1,0 +1,10 @@
+<h2><a href="/">Index</a> > Variables</h2>
+
+<input type="text" id="new"></input>
+<button onclick="location.href='/variable/'+ encodeURIComponent(document.getElementById('new').value);">Create</button>
+
+<ul>
+    {% for variable in variables %}
+    <li><a href="/variable/{{ variable.key }}">{{ variable.key }}</a></li>
+    {% endfor %}
+</ul>
