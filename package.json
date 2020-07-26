@@ -1,0 +1,29 @@
+{
+  "name": "null",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "migrate": "node ./bin/migrate.js",
+    "migrate:create": "migrate create --migrations-dir='./src/migrations'"
+  },
+  "dependencies": {
+    "@prisma/client": "^2.0.0",
+    "dotenv": "^8.2.0",
+    "migrate": "^1.7.0",
+    "pg": "^8.3.0"
+  },
+  "devDependencies": {
+    "@prisma/cli": "^2.3.0",
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/sophienya/null.git"
+  },
+  "author": "",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/sophienya/null/issues"
+  },
+  "homepage": "https://github.com/sophienya/null#readme"
+}
